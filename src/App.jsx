@@ -3,7 +3,7 @@ import "./App.css";
 import { CreateArea } from "./components/CreateArea";
 import { Note } from "./components/Note";
 import { Header } from "./components/Header";
-import { Footer } from "./components/footer";
+import { Footer } from "./components/Footer";
 function App() {
   const [addNote, setAddNote] = useState([]);
   const [isDone, setIsDone] = useState(false);
