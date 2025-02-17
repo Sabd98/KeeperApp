@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 html {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Helvetica", sans-serif;
 }
 body {
   background: #06b7e4;
@@ -21,7 +21,7 @@ header {
 
 header h1 {
   color: #fff;
-  font-family: "McLaren", cursive;
+  font-family: "Arial", cursive;
   font-weight: 200;
 }
 
@@ -105,4 +105,8 @@ form.create-note button {
 
 .minimize {
   left: 0rem;
+}
+
+.strip {
+  left: 1rem;
 }
