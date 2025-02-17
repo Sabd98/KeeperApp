@@ -1,6 +1,10 @@
+import { colors } from "@mui/material";
 
 export const Footer = () => {
+ const getYear = new Date().getFullYear();
   return (
-    <footer>Sabda Kun</footer>
+    <footer>
+      <h3>By: Sabda Avicenna  ⓒ {getYear} </h3>
+    </footer>
   )
 }

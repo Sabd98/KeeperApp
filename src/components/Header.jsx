@@ -2,7 +2,7 @@
 export const Header = () => {
   return (
     <header>
-        <h1>Anjay</h1>
+        <h1>NoteKeeper</h1>
     </header>
   )
 }

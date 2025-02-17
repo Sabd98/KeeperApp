@@ -26,6 +26,7 @@ header h1 {
 }
 
 footer {
+  color: #fff;
   position: absolute;
   text-align: center;
   bottom: 0;
