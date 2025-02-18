@@ -9,16 +9,23 @@ export const Note = (props) => {
     <>
       <div className="note">
         <h1
-          style={{ textDecoration: props.stripped ? "line-through" : "none" }}
+          style={{
+            textDecoration: props.data.stripped ? "line-through" : "none",
+          }}
         >
-          {props.title}
+          {props.data.title}
         </h1>
-        <p style={{ textDecoration: props.stripped ? "line-through" : "none" }}>
-          {props.content}
+        <p
+          style={{
+            textDecoration: props.data.stripped ? "line-through" : "none",
+          }}
+        >
+          {props.data.note}
         </p>
         <div>
+          <small className="note-date">{props.data.dateTime}</small>
           <button onClick={() => props.onStrip(props.id)}>
-            {props.stripped ? <Title /> : <FormatStrikethrough />}
+            {props.data.stripped ? <Title /> : <FormatStrikethrough />}
           </button>
 
           <button onClick={handleClick}>

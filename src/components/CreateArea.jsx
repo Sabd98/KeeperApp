@@ -1,4 +1,4 @@
-import { AddRounded, FormatStrikethrough, KeyboardArrowUp, ZoomIn } from "@mui/icons-material";
+import { AddRounded, KeyboardArrowUp } from "@mui/icons-material";
 import { Collapse, Fab, Zoom } from "@mui/material";
 import { useState } from "react";
 
@@ -26,18 +26,18 @@ export const CreateArea = (props) => {
     e.preventDefault();
   }
   function expand() {
-    setIsExpand((isExpanded) => (isExpanded = true));
+    setIsExpand((isExpanded) => !isExpanded);
   }
 
   function unExpand(e) {
     e.preventDefault();
-    setIsExpand((isExpanded) => (isExpanded = false));
+    setIsExpand((isExpanded) => !isExpanded);
   }
   return (
     <div>
       <form className="create-note">
         {isExpand && (
-          <Collapse orientation="vertical" in={isExpand}>
+          <Collapse unmountOnExit in={isExpand}>
             <input
               name="title"
               onChange={onChange}
@@ -57,14 +57,13 @@ export const CreateArea = (props) => {
         />
         <div className="button_bar">
           <div>
-          <Zoom in={isExpand}>
-            <button onClick={unExpand} className="minimize">
-              <KeyboardArrowUp />
-            </button>
-          </Zoom>
-         
+            <Zoom in={isExpand}>
+              <button onClick={unExpand} className="minimize">
+                <KeyboardArrowUp />
+              </button>
+            </Zoom>
           </div>
-         
+
           <Zoom in={isExpand}>
             <Fab
               className="addButton"

@@ -1,16 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { CreateArea } from "./components/CreateArea";
 import { Note } from "./components/Note";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 function App() {
-  const [addNote, setAddNote] = useState([]);
-  const [isDone, setIsDone] = useState(false);
+  const [addNote, setAddNote] = useState(() => {
+    const savedNotes = localStorage.getItem("notes");
+    return savedNotes ? JSON.parse(savedNotes) : [];
+  });
 
+  useEffect(() => {
+  localStorage.setItem("notes", JSON.stringify(addNote));
+  }, [addNote])
+  
   function addItem(inputText) {
     setAddNote((prevItems) => {
-      return [...prevItems, inputText];
+      return [...prevItems,  { 
+        ...inputText,
+        dateTime: new Date().toLocaleString() // Add current date/time
+      }];
     });
   }
 
@@ -38,9 +47,7 @@ function App() {
         return (
           <Note
             id={i}
-            title={d.title}
-            content={d.note}
-            stripped={d.stripped}
+            data={d}
             onDelete={deleteNote}
             onStrip={toggleStripped}
             key={i}
