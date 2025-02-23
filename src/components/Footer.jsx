@@ -1,4 +1,3 @@
-import { colors } from "@mui/material";
 
 export const Footer = () => {
  const getYear = new Date().getFullYear();
