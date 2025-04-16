@@ -26,7 +26,7 @@ export const CreateArea = (props) => {
     e.preventDefault();
   }
   function expand() {
-    setIsExpand((isExpanded) => !isExpanded);
+    setIsExpand((isExpanded) => isExpanded=true);
   }
 
   function unExpand(e) {
